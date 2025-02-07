@@ -17,13 +17,13 @@ export default function Home() {
       <main className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <h1 className="text-5xl text-gray-900 dark:text-white mb-4">
+            <h1 className="text-4xl text-center md:text-left md:text-5xl mt-6 sm:mt-0 text-gray-900 dark:text-white mb-4">
               Transform Your Life with More Education
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
+            <p className="text-xl text-center md:text-left text-gray-600 dark:text-gray-300 mb-6">
               Our expert guidance and skills can help you become the best version of yourself.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex justify-center md:justify-start space-x-4">
               <button className="bg-[#2DB188] transition-all duration-500 text-white px-6 py-3 rounded-lg hover:bg-[#258a6a]">
                 Get Started
               </button>
