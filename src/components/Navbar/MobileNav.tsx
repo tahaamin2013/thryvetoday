@@ -1,10 +1,13 @@
 "use client";
+
+import { Menu } from "lucide-react";
 import { usePathname } from "next/navigation";
 import {
   Sheet,
   SheetContent,  SheetTrigger,
-} from "../ui/sheet"; 
+} from "@/components/ui/sheet"; 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 const MobileNav = () => {
   const [isOpen, setOpen] = useState<boolean>(false);
@@ -14,6 +17,7 @@ const MobileNav = () => {
   const toggleOpen = () => setOpen((prev) => !prev);
 
   useEffect(() => {
+    // Close the sidebar when the pathname changes
     closeSidebar();
   }, [pathname]);
 
@@ -21,29 +25,31 @@ const MobileNav = () => {
     <div className="sm:hidden">
       <Sheet open={isOpen} onOpenChange={setOpen}>
         <SheetTrigger asChild>
-      Sfd
+          <button aria-label="Menu Button" onClick={toggleOpen}>
+            <Menu className="relative z-50 h-5 w-5 text-zinc-700" />
+          </button>
         </SheetTrigger>
         <SheetContent className="text-left">
           <div className="mt-4 text-lg flex flex-col gap-4">  
             <span className="border-black border-b w-fit">
-              <p id="Drinks" onClick={closeSidebar}>
+              <Link href='/drinks'>
                 Drinks
-              </p>
+              </Link>
             </span>
             <span className="border-black border-b w-fit">
-              <p id="Foods" onClick={closeSidebar}>
-                Foods
-              </p>
+              <Link href='/food'>
+                Food
+              </Link>
             </span>
             <span className="border-black border-b w-fit">
-              <p id="At Home Coffee" onClick={closeSidebar}>
+              <Link href='/athomecoffee'>
                 At Home Coffee
-              </p>
+              </Link>
             </span>
             <span className="border-black border-b w-fit">
-              <p id="Merchandise" onClick={closeSidebar}>
+              <Link href='/merchandise'>
                 Merchandise
-              </p>
+              </Link>
             </span>
           </div>
         </SheetContent>

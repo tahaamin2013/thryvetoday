@@ -4,12 +4,10 @@ import Link from "next/link";
 import MobileNav from "./MobileNav";
 import {useEffect } from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 import { ThemeToggle } from "../theme_toggler";
 
 
 const Navbar = () => {
-  const router = useRouter();
 
   useEffect(() => {
     const refreshLink = document.getElementById("refreshLink");
