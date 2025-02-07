@@ -36,7 +36,7 @@ export default function Home() {
             <div className="mb-12 flex w-full h-fit sm:h-[450px] md:mb-16 lg:w-2/2 relative">
               <div className="relative left-12 top-12 z-10 -ml-12 overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800 shadow-lg md:left-16 md:top-16 lg:ml-0">
                 <Image
-                  src='/hero1.jpg'
+                  src='/hero2.webp'
                   alt="Great Photo"
                   className="h-full w-full object-cover object-center"
                   width={700}
@@ -45,7 +45,7 @@ export default function Home() {
               </div>
               <div className="overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800 shadow-lg">
                 <Image
-                  src='/hero2.jpg'
+                  src='/hero1.webp'
                   alt="Great Photo"
                   className="h-full w-full object-cover object-center"
                   width={700}
