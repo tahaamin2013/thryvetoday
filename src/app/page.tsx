@@ -39,14 +39,15 @@ export default function Home() {
       <main className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
         <div className="grid md:grid-cols-2 items-center">
           <div>
-            <h1 className="text-2xl  md:text-2xl mt-6 sm:mt-0 text-gray-900 dark:text-white">
-              Transform Your Life with Quality Medical Training
-            </h1>
+         
             <p className=" flex-wrap flex  text-gray-600 dark:text-gray-300 ">
               <div className="flex text-4xl">Welcome to <p className=" font-thryez text-[#2DB188]">Thryve</p></div>
             </p>
-            <p className="text-[10px] italic font-extralight   flex  text-gray-600 dark:text-gray-300 mb-5">            Built by nurses, inspired by care, and driven by education.
+            <p className="text-[10px] italic font-extralight   flex  text-gray-600 dark:text-gray-300 ">            Built by nurses, inspired by care, and driven by education.
             </p>
+            <h1 className="text-2xl mb-4  md:text-2xl mt-6 sm:mt-0 text-gray-900 dark:text-white">
+              Transform Your Life with Quality Medical Training
+            </h1>
             <p className="text-md   flex  text-gray-600 dark:text-gray-300 mb-6">Empower yourself with medical skills guided by experienced educators who care about your growth.</p>
             <p className="text-md border-t-2 py-2  border-white flex  text-gray-600 dark:text-gray-300 mb-1">Start your journey today to become the best version of yourself.</p>
             <div className="flex mb-5 space-x-4">
