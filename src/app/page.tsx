@@ -22,7 +22,7 @@ export default function Home() {
       name: "Our Services",
       src: "/hero1.webp",
     },
-  
+
   ];
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-center bg-white dark:bg-gray-900 text-black dark:text-white overflow-hidden">
@@ -30,22 +30,26 @@ export default function Home() {
         <title>Thryve - Transforming Health and Wellness</title>
         <meta name="description" content="Thryve - Personalized Health Solutions" />
       </Head>
-      
+
       {/* Blurred Circles */}
       <div className="absolute top-10 left-10 w-[400px] h-72 bg-blue-400 opacity-30 rounded-full blur-3xl"></div>
       <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-pink-400 opacity-20 rounded-full blur-[120px]"></div>
 
       {/* Hero Section */}
       <main className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div className="grid md:grid-cols-2 items-center">
           <div>
-            <h1 className="text-4xl text-center md:text-left md:text-5xl mt-6 sm:mt-0 text-gray-900 dark:text-white mb-4">
-              Transform Your Life with More Education
+            <h1 className="text-2xl  md:text-2xl mt-6 sm:mt-0 text-gray-900 dark:text-white">
+              Transform Your Life with Quality Medical Training
             </h1>
-            <p className="text-xl text-center md:text-left text-gray-600 dark:text-gray-300 mb-6">
-              Our expert guidance and skills can help you become the best version of yourself.
+            <p className=" flex-wrap flex  text-gray-600 dark:text-gray-300 ">
+              <div className="flex text-4xl">Welcome to <p className=" font-thryez text-[#2DB188]">Thryve</p></div>
             </p>
-            <div className="flex justify-center md:justify-start space-x-4">
+            <p className="text-[10px] italic font-extralight   flex  text-gray-600 dark:text-gray-300 mb-5">            Built by nurses, inspired by care, and driven by education.
+            </p>
+            <p className="text-md   flex  text-gray-600 dark:text-gray-300 mb-6">Empower yourself with medical skills guided by experienced educators who care about your growth.</p>
+            <p className="text-md border-t-2 py-2  border-white flex  text-gray-600 dark:text-gray-300 mb-1">Start your journey today to become the best version of yourself.</p>
+            <div className="flex mb-5 space-x-4">
               <button className="bg-[#2DB188] transition-all duration-500 text-white px-6 py-3 rounded-lg hover:bg-[#258a6a]">
                 Get Started
               </button>
@@ -79,16 +83,16 @@ export default function Home() {
         </div>
       </main>
 
-      <section 
-      className="relative max-w-6xl mx-auto px-4  sm:px-6 lg:px-8 mt-20 bg-cover bg-center"
-      style={{ backgroundImage: "url('/path-to-your-image.jpg')" }}
-    >
-      <h1 className="text-center text-5xl md:text-7xl font-bold flex justify-center items-center gap-2">
-        About <span className="font-thryez text-[#2DB188]">Thryve</span>.today
-      </h1>
-      <AnimatedTestimonials testimonials={testimonials} />
+      <section
+        className="relative max-w-6xl mx-auto px-4  sm:px-6 lg:px-8 mt-20 bg-cover bg-center"
+        style={{ backgroundImage: "url('/path-to-your-image.jpg')" }}
+      >
+        <h1 className="text-center text-5xl md:text-7xl font-bold flex justify-center items-center gap-2">
+          About <span className="font-thryez text-[#2DB188]">Thryve</span>.today
+        </h1>
+        <AnimatedTestimonials testimonials={testimonials} />
 
-    </section>
+      </section>
     </div>
   );
 }

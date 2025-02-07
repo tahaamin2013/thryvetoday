@@ -30,15 +30,18 @@ const Navbar = () => {
     <nav className=" border-b-2 fixed shadow-sm pt-3 pb-1 flex items-center inset-x-0 top-0 z-30 w-full  dark:bg-[#121827]/75 bg-white/75 backdrop-blur-lg transition-all">
       <MaxWidthWrapper>
         <div className="flex h-16 items-center justify-between border-zinc-200">
-        <Link
+<div className="flex flex-col w-[200px]">
+<Link
   aria-label="Starbucks Home"
   href="/"
   className="flex text-4xl ml-4 text-[#2DB188] gap-4 z-40 font-thryez"
 >
 thryve
 </Link>
+{/* <p className="text-[4px]">Built by nurses, inspired by care, and driven by education.</p> */}
 
 
+</div>
           <MobileNav />
           <div className="hidden text-lg gap-5 items-center space-x-4 sm:flex">
             <p id="home">Home</p>
