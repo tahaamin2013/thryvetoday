@@ -51,10 +51,9 @@ export default function Home() {
             <p className="text-md border-t-2 py-2  border-white flex  text-gray-600 dark:text-gray-300 mb-1">Start your journey today to become the best version of yourself.</p>
             <div className="flex mb-5 space-x-4">
               <button className="bg-[#2DB188] transition-all duration-500 text-white px-6 py-3 rounded-lg hover:bg-[#258a6a]">
-                Get Started
-              </button>
+                Apply Now              </button>
               <button className="border-[#2DB188] transition-all duration-500 text-[#2DB188] border px-6 py-3 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-800">
-                Learn More
+                Explore Courses
               </button>
             </div>
           </div>
