@@ -3,7 +3,6 @@ import MaxWidthWrapper from "../MaxWidthWrapper";
 import Link from "next/link";
 import MobileNav from "./MobileNav";
 import {useEffect } from "react";
-import { useRouter } from "next/navigation";
 import { ThemeToggle } from "../theme_toggler";
 
 
@@ -34,7 +33,7 @@ const Navbar = () => {
         <Link
   aria-label="Starbucks Home"
   href="/"
-  className="flex text-4xl text-[#2DB188] gap-4 z-40 font-thryez"
+  className="flex text-4xl ml-4 text-[#2DB188] gap-4 z-40 font-thryez"
 >
 thryve
 </Link>
