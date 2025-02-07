@@ -1,7 +1,29 @@
 import Image from "next/image";
 import Head from "next/head";
+import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 
 export default function Home() {
+  const testimonials = [
+    {
+      quote:
+        "Thryve was created by two nurses that take pride and joy in helping the community.  Thryve has been dedicated to providing high-quality education and training for our students. Each class is taught one on one with love and compassion. ",
+      name: "Our History",
+      src: "/hero2.webp",
+    },
+    {
+      quote:
+        "Our team of educators includes some of the most respected and experienced medical professionals in the industry. Each teacher brings a unique set of skills and expertise to our  training center, and is committed to providing excellent expertise to our students.",
+      name: "Our Educators",
+      src: "/hero3.webp",
+    },
+    {
+      quote:
+        "We offer a wide range of medical training, including Advance Life support, Basic Life Support, Pediatric Life Support, Nurse- aid training program, Phlebotomy, and more services to come.  Our services are designed to meet the diverse training needs of our students, from all diverse backgrounds.",
+      name: "Our Services",
+      src: "/hero1.webp",
+    },
+  
+  ];
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-center bg-white dark:bg-gray-900 text-black dark:text-white overflow-hidden">
       <Head>
@@ -56,6 +78,17 @@ export default function Home() {
           </div>
         </div>
       </main>
+
+      <section 
+      className="relative max-w-6xl mx-auto px-4  sm:px-6 lg:px-8 mt-20 bg-cover bg-center"
+      style={{ backgroundImage: "url('/path-to-your-image.jpg')" }}
+    >
+      <h1 className="text-center text-5xl md:text-7xl font-bold flex justify-center items-center gap-2">
+        About <span className="font-thryez text-[#2DB188]">Thryve</span>.today
+      </h1>
+      <AnimatedTestimonials testimonials={testimonials} />
+
+    </section>
     </div>
   );
 }
