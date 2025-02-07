@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/sheet"; 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { ThemeToggle } from "../theme_toggler";
 
 
 const MobileNav = () => {
@@ -25,31 +26,33 @@ const MobileNav = () => {
   return (
     <div className="sm:hidden">
       <Sheet open={isOpen} onOpenChange={setOpen}>
-        <SheetTrigger asChild>
-          <button aria-label="Menu Button" onClick={toggleOpen}>
+        <div className="flex flex-row items-center gap-">
+        <SheetTrigger >
+          <button aria-label="Menu Button" className="flex flex-row gap-3" onClick={toggleOpen}>
             <Menu className="relative z-50 h-5 w-5 text-zinc-700" />
           </button>
         </SheetTrigger>
+        <ThemeToggle />
+        </div>
         <SheetContent className="text-left">
           <div className="mt-4 text-lg flex flex-col gap-4">  
             <span className="border-black border-b w-fit">
-              <Link href='/drinks'>
-                Drinks
+              <Link href='/home'>
+              Home
               </Link>
             </span>
             <span className="border-black border-b w-fit">
-              <Link href='/food'>
-                Food
+              <Link href='/course'>
+              Course
               </Link>
             </span>
             <span className="border-black border-b w-fit">
-              <Link href='/athomecoffee'>
-                At Home Coffee
-              </Link>
+              <Link href='/apply'>
+              Apply Now              </Link>
             </span>
             <span className="border-black border-b w-fit">
-              <Link href='/merchandise'>
-                Merchandise
+              <Link href='/checkout'>
+              Checkout
               </Link>
             </span>
           </div>

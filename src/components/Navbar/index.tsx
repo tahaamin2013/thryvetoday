@@ -27,7 +27,7 @@ const Navbar = () => {
 
 
   return (
-    <nav className=" border-b-2 fixed shadow-sm pt-3 pb-1 flex items-center inset-x-0 top-0 z-30 w-full border-gray-200 bg-white/75 backdrop-blur-lg transition-all">
+    <nav className=" border-b-2 fixed shadow-sm pt-3 pb-1 flex items-center inset-x-0 top-0 z-30 w-full  dark:bg-[#121827]/75 bg-white/75 backdrop-blur-lg transition-all">
       <MaxWidthWrapper>
         <div className="flex h-16 items-center justify-between border-zinc-200">
         <Link
@@ -38,13 +38,14 @@ const Navbar = () => {
 thryve
 </Link>
 
+
           <MobileNav />
           <div className="hidden text-lg gap-5 items-center space-x-4 sm:flex">
-            <p id="Drinks">Home</p>
-            <p id="Foods">Course</p>
-            <p id="At Home Coffee">Apply Now</p>
-            <p id="At Home Coffee">Checkout</p>
-            <p id="Merchandise"><ThemeToggle /></p>
+            <p id="home">Home</p>
+            <p id="course">Course</p>
+            <p id="apply">Apply Now</p>
+            <p id="checkout">Checkout</p>
+            <p id="ThemeToggle"><ThemeToggle /></p>
           </div>
         </div>
       </MaxWidthWrapper>
