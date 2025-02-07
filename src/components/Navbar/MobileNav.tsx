@@ -9,6 +9,7 @@ import {
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
+
 const MobileNav = () => {
   const [isOpen, setOpen] = useState<boolean>(false);
   const pathname = usePathname();
