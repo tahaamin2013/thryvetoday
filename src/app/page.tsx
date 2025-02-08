@@ -239,8 +239,8 @@ export default function Home() {
  <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-12 text-center max-w-3xl mx-auto">
    <div className="relative">
      {/* Decorative quote marks */}
-     <div className="absolute -top-6 left-0 text-6xl text-[#2DB188]/20">"</div>
-     <div className="absolute -bottom-6 right-0 text-6xl text-[#2DB188]/20">"</div>
+     <div className="absolute -top-6 left-0 text-6xl text-[#2DB188]/20">&quot;</div>
+     <div className="absolute -bottom-6 right-0 text-6xl text-[#2DB188]/20">&quot;</div>
      
      <p className="text-xl italic text-gray-600 dark:text-gray-300 mb-6">
        Reviews coming soon!
