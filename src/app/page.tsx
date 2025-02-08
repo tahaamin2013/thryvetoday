@@ -193,7 +193,7 @@ export default function Home() {
       <span className="text-4xl">💡</span>
     </div>
     <blockquote className="text-xl italic text-gray-700 dark:text-gray-200 text-center">
-      "With Thryve, you're learning from the best."
+      &quot;With Thryve, you&apos;re learning from the best.&quot;
     </blockquote>
   </div>
 
@@ -247,7 +247,7 @@ export default function Home() {
      </p>
      
      <p className="text-gray-500 dark:text-gray-400">
-       Check back to hear from students who've transformed their lives through Thryve.
+       Check back to hear from students who&apos;ve transformed their lives through Thryve.
      </p>
    </div>
  </div>
