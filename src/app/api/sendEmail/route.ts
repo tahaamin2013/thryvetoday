@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, email, message } = await req.json();
+    const { name, email, message, phone } = await req.json();
 
     if (!name || !email || !message) {
       return NextResponse.json(
@@ -28,15 +28,20 @@ export async function POST(req: NextRequest) {
       html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
       <header style="background-color: #f5f5f5; padding: 20px; text-align: center;">
-        <h1 style="font-size: 24px; color: #333; margin: 0;">New Message From ${name}</h1>
+      
+<img src='https://raw.githubusercontent.com/tahaamin2013/21/refs/heads/main/Logo.PNG' width="200" heght="200" />
+<h1 style="font-size: 24px; color: #333; margin: 0;">
+  New Message From ${name}
+</h1>
       </header>
       <div style="padding: 20px;">
         <p style="font-size: 16px; color: #666;"><strong>Name:</strong> ${name}</p>
         <p style="font-size: 16px; color: #666;"><strong>Email:</strong> ${email}</p>
+        <p style="font-size: 16px; color: #666;"><strong>Phone:</strong> ${phone}</p>
         <p style="font-size: 16px; color: #666;"><strong>Message:</strong> ${message}</p>
       </div>
       <footer style="background-color: #f5f5f5; padding: 10px; text-align: center;">
-        <p style="font-size: 14px; color: #999; margin: 0;">&copy; ${new Date().getFullYear()} [company_name]. All rights reserved.</p>
+        <p style="font-size: 14px; color: #999; margin: 0;">&copy; ${new Date().getFullYear()} Thryve . All rights reserved.</p>
       </footer>
     </div>
       `,

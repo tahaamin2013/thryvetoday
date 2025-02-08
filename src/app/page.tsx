@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Head from "next/head";
+import ContactForm from "@/components/EmailForm";
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
   <div className="grid md:grid-cols-2 items-center">
     {/* Left Column - Text Content */}
     <div>
-      <div className="flex  tracking-wide text-4xl">
+      <div className="flex mt-5 tracking-wide text-4xl">
         Welcome to <span className="font-thryez text-[#2DB188]">Thryve</span>
       </div>
       
@@ -77,7 +78,7 @@ export default function Home() {
       <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
   <div className="text-center mb-12">
     <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
-      Why Choose <span className="font-thryez text-[#2DB188]">Thryve</span>?
+      Why Choose <span className="font-thryez  text-[#2DB188]">Thryve</span>?
     </h2>
   </div>
   
@@ -260,6 +261,7 @@ export default function Home() {
 <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
  <div className="text-center mb-12">
    <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
+   <div className="absolute top-1/6 right-1/7 w-96 h-96 bg-pink-400 opacity-20  blur-[120px]"></div>
      Contact <span className="font-thryez text-[#2DB188]">Us</span>
    </h2>
    <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
@@ -268,11 +270,15 @@ export default function Home() {
  </div>
 
  <div className="grid md:grid-cols-2 gap-12">
+
+ <div className="space-y-8">
+   <ContactForm />
+   </div>
    {/* Contact Information */}
-   <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8">
+ <div>
+ <div className="bg-white h-fit dark:bg-gray-800 rounded-2xl shadow-lg p-8">
      <div className="space-y-6">
        <div className="flex items-start space-x-4">
-         <span className="text-2xl">📍</span>
          <div>
            <h3 className="font-semibold text-gray-900 dark:text-white">Address</h3>
            <p className="text-gray-600 dark:text-gray-300">
@@ -283,64 +289,28 @@ export default function Home() {
        </div>
 
        <div className="flex items-start space-x-4">
-         <span className="text-2xl">📞</span>
          <div>
            <h3 className="font-semibold text-gray-900 dark:text-white">Contact</h3>
-           <p className="text-gray-600 dark:text-gray-300">
-             Phone: (979) 4-Thryve<br />
-             Email: info@thryve.today
+           <p className="">Mon - Fri, 9:00 Am - 5:00 PM.</p>
+           <p className="text-gray-600 dark:text-gray-400">
+           979-484-7983<br />
+             info@thryve.today
            </p>
          </div>
        </div>
 
-       <div className="flex items-start space-x-4">
-         <span className="text-2xl">⏰</span>
-         <div>
-           <h3 className="font-semibold text-gray-900 dark:text-white">Hours</h3>
-           <table className="w-full text-gray-600 dark:text-gray-300 border-collapse border border-gray-400">
-  <thead>
-    <tr className="bg-gray-200 dark:bg-gray-700">
-      <th className="border border-gray-400 px-4 py-1">Day</th>
-      <th className="border border-gray-400 px-4 py-1">Hours</th>
-    </tr>
-  </thead>
-  <tbody>
-    {[
-      { day: "Mon", hours: "09:00 am – 05:00 pm" },
-      { day: "Tue", hours: "09:00 am – 05:00 pm" },
-      { day: "Wed", hours: "09:00 am – 05:00 pm" },
-      { day: "Thu", hours: "09:00 am – 05:00 pm" },
-      { day: "Fri", hours: "09:00 am – 05:00 pm" },
-      { day: "Sat", hours: "Closed" },
-      { day: "Sun", hours: "Closed" },
-    ].map(({ day, hours }) => (
-      <tr key={day} className="border border-gray-400">
-        <td className="border border-gray-400 px-4 ">{day}</td>
-        <td className="border border-gray-400 px-4 ">{hours}</td>
-      </tr>
-    ))}
-  </tbody>
-</table>
 
-         </div>
-       </div>
-
-       <div className="flex space-x-4 mt-6">
-         <button className="bg-[#2DB188] text-white px-6 py-2 rounded-lg hover:bg-[#258a6a] transition-colors">
-           Get Directions
-         </button>
-         <button className="border border-[#2DB188] text-[#2DB188] px-6 py-2 rounded-lg hover:bg-[#2DB188]/10 transition-colors">
-           Drop Us a Line
-         </button>
-       </div>
      </div>
+     
+   
    </div>
-
+   <div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3309.340578475919!2d-84.4997119198651!3d33.95808467356412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f513c2259ee893%3A0x5e94ecb7f0d816af!2s1800%20Roswell%20Rd%2C%20Marietta%2C%20GA%2030068%2C%20USA!5e0!3m2!1sen!2s!4v1739035682596!5m2!1sen!2s" className="rounded-xl mt-5 w-[500px]" height="250"  loading="lazy" ></iframe> </div>
    {/* Visit & Subscribe */}
-   <div className="space-y-8">
 
-   </div>
  </div>
+  
+ </div>
+
 </section>
 
 {/* Footer Section */}

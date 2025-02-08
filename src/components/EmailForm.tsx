@@ -10,6 +10,7 @@ export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     message: '',
   });
 
@@ -32,6 +33,7 @@ export default function ContactForm() {
         body: JSON.stringify({
             name: formData.name,
           email: formData.email,
+          phone: formData.phone,
         //   message: `Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`,
           message: `${formData.message}`,
         }),
@@ -39,7 +41,7 @@ export default function ContactForm() {
 
       if (response.ok) {
         alert('Message sent successfully!');
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({ name: '', email: '', phone: '' , message: '' });
       } else {
         const result = await response.json();
         alert(`Failed to send message: ${result.error}`);
@@ -51,12 +53,17 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg">
+    <form onSubmit={handleSubmit} className="w-[500px] h-full max-w-md mx-auto dark:bg-[#1F2937] dark:text-white bg-white p-8 rounded-lg shadow-lg">
+      
       <div className="mb-6">
-        <Label htmlFor="name" className="block text-gray-700 font-medium mb-2">Name</Label>
+    <h1 className='text-2xl font-bold mb-3'>
+      Contact
+    </h1>
+        <Label htmlFor="name" className="block text-gray-700 dark:text-white dark:text-white font-medium mb-2">Name</Label>
         <Input
           type="text"
           id="name"
+
           name="name"
           value={formData.name}
           onChange={handleChange}
@@ -64,7 +71,7 @@ export default function ContactForm() {
         />
       </div>
       <div className="mb-6">
-        <Label htmlFor="email" className="block text-gray-700 font-medium mb-2">Email</Label>
+        <Label htmlFor="email" className="block text-gray-700 dark:text-white font-medium mb-2">Email</Label>
         <Input
           type="email"
           id="email"
@@ -75,18 +82,32 @@ export default function ContactForm() {
         />
       </div>
       <div className="mb-6">
-        <Label htmlFor="message" className="block text-gray-700 font-medium mb-2">Message</Label>
+        <Label htmlFor="email" className="block text-gray-700 dark:text-white font-medium mb-2">Phone</Label>
+        <Input
+          type="phone"
+          id="phone"
+          name="phone"
+          typeof='number'
+          value={formData.phone}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div className="mb-6">
+        <Label htmlFor="message" className="block text-gray-700 dark:text-white font-medium mb-2">Message</Label>
         <Textarea
           id="message"
           name="message"
+className='h-[70px]'
           value={formData.message}
           onChange={handleChange}
           required
         ></Textarea>
       </div>
-      <Button type="submit" className='w-full'>
-        Send Message
-      </Button>
+      
+      <button type='submit' className="bg-[#2DB188] text-white px-6 py-2 rounded-lg hover:bg-[#258a6a] transition-colors">
+Send         </button>
+
     </form>
   );
 }
