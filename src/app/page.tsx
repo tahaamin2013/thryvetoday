@@ -4,7 +4,7 @@ import ContactForm from "@/components/EmailForm";
 import { Button } from "@/components/ui/button"
 import { PhoneCall } from "lucide-react"
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 
 interface TeamMember {
   name: string

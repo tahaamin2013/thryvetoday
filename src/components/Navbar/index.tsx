@@ -1,7 +1,6 @@
 "use client";
 import MaxWidthWrapper from "../MaxWidthWrapper";
-import Link from "next/link";
-import MobileNav from "./MobileNav";
+  import MobileNav from "./MobileNav";
 import {useEffect } from "react";
 import { ThemeToggle } from "../theme_toggler";
 import Image from "next/image";
