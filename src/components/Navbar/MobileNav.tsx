@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/sheet"; 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ThemeToggle } from "../theme_toggler";
 
 
 const MobileNav = () => {
@@ -29,10 +28,9 @@ const MobileNav = () => {
         <div className="flex flex-row items-center gap-">
         <SheetTrigger >
           <button aria-label="Menu Button" className="flex flex-row gap-3" onClick={toggleOpen}>
-            <Menu className="relative z-50 h-5 w-5 text-zinc-700" />
+            <Menu className="relative z-50 h-5 w-5 text-black dark:text-white" />
           </button>
         </SheetTrigger>
-        <ThemeToggle />
         </div>
         <SheetContent className="text-left">
           <div className="mt-4 text-lg flex flex-col gap-4">  

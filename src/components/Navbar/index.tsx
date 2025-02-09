@@ -4,6 +4,7 @@ import Link from "next/link";
 import MobileNav from "./MobileNav";
 import {useEffect } from "react";
 import { ThemeToggle } from "../theme_toggler";
+import Image from "next/image";
 
 
 const Navbar = () => {
@@ -31,13 +32,19 @@ const Navbar = () => {
       <MaxWidthWrapper>
         <div className="flex h-16 items-center justify-between border-zinc-200">
 <div className="flex flex-col w-[200px]">
-<Link
+{/* <Link
   aria-label="Starbucks Home"
   href="/"
   className="flex text-4xl ml-4 text-[#2DB188] gap-4 z-40 font-thryez"
 >
 thryve
-</Link>
+</Link> */}
+<div className="flex flex-col">
+<Image src='/Logo.svg' width={130} height={130} alt="Logo" />
+<p className="text-[10px] ml-1 font-GothamNarrow tracking-[.25em] uppercase text-[#B7853C] dark:text-[#E9E3AF]  bg-clip-text">
+  Training Center
+</p>
+</div>
 {/* <p className="text-[4px]">Built by nurses, inspired by care, and driven by education.</p> */}
 
 

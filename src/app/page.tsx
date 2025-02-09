@@ -1,6 +1,92 @@
 import Image from "next/image";
 import Head from "next/head";
 import ContactForm from "@/components/EmailForm";
+import { Button } from "@/components/ui/button"
+import { PhoneCall } from "lucide-react"
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+
+interface TeamMember {
+  name: string
+  role: string
+  image: string
+}
+
+const teamMembers: TeamMember[] = [
+  {
+    name: "Natalie Carter",
+    role: "Customer Success Agent",
+    image: "/Man1.jpg",
+  },
+  {
+    name: "Natalie Carter",
+    role: "Customer Success Agent",
+    image: "/Man1.jpg",
+  },
+  {
+    name: "Natalie Carter",
+    role: "Customer Success Agent",
+    image: "/Man1.jpg",
+  },
+  {
+    name: "Natalie Carter",
+    role: "Customer Success Agent",
+    image: "/Man1.jpg",
+  },  {
+    name: "Natalie Carter",
+    role: "Customer Success Agent",
+    image: "/Man1.jpg",
+  },  {
+    name: "Natalie Carter",
+    role: "Customer Success Agent",
+    image: "/Man1.jpg",
+  },
+  {
+    name: "Natalie Carter",
+    role: "Customer Success Agent",
+    image: "/Man1.jpg",
+  },
+  {
+    name: "Natalie Carter",
+    role: "Customer Success Agent",
+    image: "/Man1.jpg",
+  },
+  {
+    name: "Natalie Carter",
+    role: "Customer Success Agent",
+    image: "/Man1.jpg",
+  },
+  {
+    name: "Natalie Carter",
+    role: "Customer Success Agent",
+    image: "/Man1.jpg",
+  },  {
+    name: "Natalie Carter",
+    role: "Customer Success Agent",
+    image: "/Man1.jpg",
+  },  {
+    name: "Natalie Carter",
+    role: "Customer Success Agent",
+    image: "/Man1.jpg",
+  },  {
+    name: "Natalie Carter",
+    role: "Customer Success Agent",
+    image: "/Man1.jpg",
+  },  {
+    name: "Natalie Carter",
+    role: "Customer Success Agent",
+    image: "/Man1.jpg",
+  },  {
+    name: "Natalie Carter",
+    role: "Customer Success Agent",
+    image: "/Man1.jpg",
+  },  {
+    name: "Natalie Carter",
+    role: "Customer Success Agent",
+    image: "/Man1.jpg",
+  },
+]
+
 
 export default function Home() {
   return (
@@ -178,84 +264,63 @@ export default function Home() {
 </section>
 
 {/* Meet Our Educators Section */}
-<section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
-  <div className="text-center mb-12">
-    <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
-      Meet Our <span className="font-thryez text-[#2DB188]">Educators</span>
-    </h2>
-    <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-      Our team consists of industry-leading medical professionals who bring compassion, expertise, and real-world knowledge to every session.
-    </p>
-  </div>
+<section className="py-16 ">
+<div className="text-center  mb-12">
+          <a href="#contact" className="text-primary hover:underline mb-4 inline-block">
+            Contact us
+          </a>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Our team of educators </h2>
 
-  <div className="relative bg-gradient-to-r from-[#2DB188]/10 to-transparent p-8 rounded-2xl mb-12">
-    <div className="absolute top-0 left-0 transform -translate-y-1/2 translate-x-8">
-      <span className="text-4xl">💡</span>
-    </div>
-    <blockquote className="text-xl italic text-gray-700 dark:text-gray-200 text-center">
-      &quot;With Thryve, you&apos;re learning from the best.&quot;
-    </blockquote>
-  </div>
+          <div className="flex items-center justify-center gap-4">
+            <Button variant="secondary" className="gap-2">
+              <PhoneCall className="h-4 w-4" />
+              Book a call
+            </Button>
+            <Button>Book a demo</Button>
+          </div>
+        </div>
+        <div className="overflow-x-hidden">
+  <Carousel
+    opts={{
+      align: "start",
+      loop: true,
+    }}
+    className="w-screen"
+  >
+    {/* Margin adjust kiya taake first image aadhi dikhe */}
+    <CarouselContent className="-ml-[7%] md:-ml-[12%] md:-mr-[8%]">
+      {teamMembers.map((member, index) => (
+        <CarouselItem
+          key={index}
+          className={`pl-2 md:pl-4 ${
+            index === 0 || index === teamMembers.length - 1
+              ? "basis-[14.28%]" // First & Last image aadhi dikhe
+              : "basis-1/7"
+          }`}
+        >
+          <div className="group cursor-pointer">
+            <Card className="rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg bg-transparent border-none">
+              <CardContent className="p-0  relative">
+                <img
+                  src={member.image || "/placeholder.svg"}
+                  alt={member.name}
+                  className="object-cover w-[204px] hover:shadow-2xl  mb-0 shadow-none h-[250px] grayscale transition-all duration-300 group-hover:grayscale-0 group-hover:scale-105"
+                />
+                <div className="absolute bottom-2 left-4 right-4 p-2 backdrop-blur-xl bg-white/60 rounded-lg   text-black">
+                  <h3 className="font-semibold text-sm">{member.name}</h3>
+                  <p className="text-[9px]">{member.role}</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </CarouselItem>
+      ))}
+    </CarouselContent>
+  </Carousel>
+</div>
 
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    {/* Example Educator Card - You can duplicate and modify as needed */}
-    <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-105">
-      <div className="aspect-w-3 aspect-h-4 bg-gray-100">
-        <Image
-          src="/educator-placeholder.jpg"
-          alt="Educator"
-          className="object-cover"
-          width={400}
-          height={500}
-        />
-      </div>
-      <div className="p-6">
-        <span className="text-[#2DB188] text-sm font-semibold">Lead Instructor</span>
-        <h3 className="text-xl font-bold text-gray-900 dark:text-white mt-1">Dr. Sarah Johnson</h3>
-        <p className="text-gray-600 dark:text-gray-300 mt-2">
-          Specializing in Advanced Life Support with 15+ years of emergency medicine experience.
-        </p>
-      </div>
-    </div>
-
-    {/* You can add more educator cards here */}
-  </div>
-
-  <div className="mt-12 text-center">
-    <button className="border-[#2DB188] transition-all duration-500 text-[#2DB188] border px-8 py-3 rounded-lg hover:bg-[#2DB188] hover:text-white">
-      Meet the Full Team
-    </button>
-  </div>
 </section>
 
-{/* Testimonials Section */}
-<section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
- <div className="text-center mb-12">
-   <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
-     <span className="font-thryez text-[#2DB188]">Testimonials</span>
-   </h2>
- </div>
-
- <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-12 text-center max-w-3xl mx-auto">
-   <div className="relative">
-     {/* Decorative quote marks */}
-     <div className="absolute -top-6 left-0 text-6xl text-[#2DB188]/20">&quot;</div>
-     <div className="absolute -bottom-6 right-0 text-6xl text-[#2DB188]/20">&quot;</div>
-     
-     <p className="text-xl italic text-gray-600 dark:text-gray-300 mb-6">
-       Reviews coming soon!
-     </p>
-     
-     <p className="text-gray-500 dark:text-gray-400">
-       Check back to hear from students who&apos;ve transformed their lives through Thryve.
-     </p>
-   </div>
- </div>
-
- {/* Optional decorative elements */}
- <div className="absolute -z-10 left-1/4 top-1/2 w-64 h-64 bg-[#2DB188]/5 rounded-full blur-3xl"></div>
- <div className="absolute -z-10 right-1/4 bottom-0 w-48 h-48 bg-blue-100/50 dark:bg-blue-900/20 rounded-full blur-2xl"></div>
-</section>
 
 {/* Contact Us Section */}
 <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
@@ -269,7 +334,7 @@ export default function Home() {
    </p>
  </div>
 
- <div className="grid md:grid-cols-2 gap-12">
+ <div className="grid md:grid-cols-2 gap-5">
 
  <div className="space-y-8">
    <ContactForm />
@@ -312,6 +377,36 @@ export default function Home() {
  </div>
 
 </section>
+
+{/* Testimonials Section */}
+<section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
+ <div className="text-center mb-12">
+   <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
+     <span className="font-thryez text-[#2DB188]">Testimonials</span>
+   </h2>
+ </div>
+
+ <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-12 text-center max-w-3xl mx-auto">
+   <div className="relative">
+     {/* Decorative quote marks */}
+     <div className="absolute -top-6 left-0 text-6xl text-[#2DB188]/20">&quot;</div>
+     <div className="absolute -bottom-6 right-0 text-6xl text-[#2DB188]/20">&quot;</div>
+     
+     <p className="text-xl italic text-gray-600 dark:text-gray-300 mb-6">
+       Reviews coming soon!
+     </p>
+     
+     <p className="text-gray-500 dark:text-gray-400">
+       Check back to hear from students who&apos;ve transformed their lives through Thryve.
+     </p>
+   </div>
+ </div>
+
+ {/* Optional decorative elements */}
+ <div className="absolute -z-10 left-1/4 top-1/2 w-64 h-64 bg-[#2DB188]/5 rounded-full blur-3xl"></div>
+ <div className="absolute -z-10 right-1/4 bottom-0 w-48 h-48 bg-blue-100/50 dark:bg-blue-900/20 rounded-full blur-2xl"></div>
+</section>
+
 
 {/* Footer Section */}
 <footer className="bg-white dark:bg-gray-900 mt-20 border-t border-gray-200 dark:border-gray-800">

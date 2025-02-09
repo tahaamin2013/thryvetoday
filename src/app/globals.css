@@ -13,6 +13,14 @@ body {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'gothamNarrow';
+  src: url('/fonts/GothamNarrow-Medium.otf') format('woff2'),
+       url('/fonts/GothamNarrow-Medium.otf') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 @layer base {
   :root {
@@ -77,4 +85,12 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

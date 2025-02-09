@@ -12,6 +12,7 @@ export default {
   	extend: {
 		fontFamily: {
 			thryez: ['"brunella"', 'sans-serif'], // Replace with your font's name
+			GothamNarrow: ['"gothamNarrow"', 'sans-serif'], // Replace with your font's name
 		  },
   		colors: {
   			background: 'hsl(var(--background))',
@@ -55,6 +56,13 @@ export default {
   				'5': 'hsl(var(--chart-5))'
   			}
   		},
+		  container: {
+			center: true,
+			padding: "2rem",
+			screens: {
+			  "2xl": "1400px",
+			},
+		  },
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
