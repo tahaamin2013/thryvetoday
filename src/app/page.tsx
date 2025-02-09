@@ -2,7 +2,7 @@ import Image from "next/image";
 import Head from "next/head";
 import ContactForm from "@/components/EmailForm";
 import { Button } from "@/components/ui/button"
-import { PhoneCall } from "lucide-react"
+import { PhoneCall } from 'lucide-react'
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 import { Card, CardContent } from "@/components/ui/card"
 
@@ -90,25 +90,27 @@ export default function Home() {
     {/* Right Column - Images */}
     <div>
       <div className="mb-12 flex w-full h-fit sm:h-[450px] md:mb-16 lg:w-2/2 relative">
-        <div className="relative left-12 top-12 z-10 -ml-12 overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800 shadow-lg md:left-16 md:top-16 lg:ml-0">
-          <Image
-            src='/hero2.webp'
-            alt="Great Photo"
-            className="h-full w-full object-cover object-center"
-            width={700}
-            height={500}
-          />
-        </div>
-        <div className="overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800 shadow-lg">
-          <Image
-            src='/hero1.webp'
-            alt="Great Photo"
-            className="h-full w-full object-cover object-center"
-            width={700}
-            height={500}
-          />
-        </div>
-      </div>
+  <div className="relative left-12 top-12 z-10 -ml-12 overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800 shadow-lg md:left-16 md:top-16 lg:ml-0">
+    <Image
+      src='/hero2.webp'
+      alt="Great Photo"
+      className="h-full w-full object-cover object-center"
+      width={700}
+      height={500}
+      priority
+    />
+  </div>
+  <div className="overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800 shadow-lg">
+    <Image
+      src='/hero1.webp'
+      alt="Great Photo"
+      className="h-full w-full object-cover object-center"
+      width={700}
+      height={500}
+      priority
+    />
+  </div>
+</div>
     </div>
   </div>
 </main> 
@@ -221,7 +223,7 @@ export default function Home() {
           <a href="#contact" className="text-primary hover:underline mb-4 inline-block">
             Contact us
           </a>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Our team of educators </h2>
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Our Team of educators </h2>
 
           <div className="flex items-center justify-center gap-4">
             <Button variant="secondary" className="gap-2">
@@ -248,9 +250,11 @@ export default function Home() {
         <Card className="rounded-2xl transition-all duration-300 hover:shadow-lg bg-transparent border-none">
           <CardContent className="p-0 relative">
             <div className="relative">
-              <img
+              <Image
                 src={member.image || "/placeholder.svg"}
                 alt={member.name}
+                height={250}
+                width={204}
                 className="object-cover rounded-xl w-[204px] h-[250px] grayscale transition-all duration-300 group-hover:grayscale-0"
               />
             </div>
@@ -320,7 +324,7 @@ export default function Home() {
      
    
    </div>
-   <div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3309.340578475919!2d-84.4997119198651!3d33.95808467356412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f513c2259ee893%3A0x5e94ecb7f0d816af!2s1800%20Roswell%20Rd%2C%20Marietta%2C%20GA%2030068%2C%20USA!5e0!3m2!1sen!2s!4v1739035682596!5m2!1sen!2s" className="rounded-xl mt-5 w-[500px]" height="250"  loading="lazy" ></iframe> </div>
+   <div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3309.340578475919!2d-84.4997119198651!3d33.95808467356412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f513c2259ee893%3A0x5e94ecb7f0d816af!2s1800%20Roswell%20Rd%2C%20Marietta%2C%20GA%2030068%2C%20USA!5e0!3m2!1sen!2s!4v1739035682596!5m2!1sen!2s" className="rounded-xl mt-5 w-full sm:w-[500px]" height="250"  loading="lazy" ></iframe> </div>
    {/* Visit & Subscribe */}
 
  </div>

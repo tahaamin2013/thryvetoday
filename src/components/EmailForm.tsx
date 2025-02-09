@@ -52,7 +52,7 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-[500px] h-full max-w-md mx-auto dark:bg-[#1F2937] dark:text-white bg-white p-8 rounded-lg shadow-lg">
+    <form onSubmit={handleSubmit} className="w-fit sm:w-[500px] h-full max-w-md mx-auto dark:bg-[#1F2937] dark:text-white bg-white p-8 rounded-lg shadow-lg">
       
       <div className="mb-6">
     <h1 className='text-2xl font-bold mb-3'>
