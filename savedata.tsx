@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import Head from "next/head";
 import ContactForm from "@/components/EmailForm";
@@ -5,7 +6,8 @@ import { Button } from "@/components/ui/button"
 import { PhoneCall } from "lucide-react"
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 import { Card, CardContent } from "@/components/ui/card"
-import { useEffect, useRef } from "react";
+import * as React from "react"
+import Autoplay from "embla-carousel-autoplay"
 
 
 interface TeamMember {
@@ -17,31 +19,79 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     name: "Natalie Carter",
-    role: "Educator",
+    role: "Customer Success Agent",
     image: "/Man1.jpg",
   },
   {
-    name: "Arron Austin",
-    role: "Educator",
-    image: "/Man2 (2).jpg",
+    name: "Natalie Carter",
+    role: "Customer Success Agent",
+    image: "/Man1.jpg",
+  },
+  {
+    name: "Natalie Carter",
+    role: "Customer Success Agent",
+    image: "/Man1.jpg",
+  },
+{
+    name: "Natalie Carter",
+    role: "Customer Success Agent",
+    image: "/Man1.jpg",
   },  {
-    name: "Charlie River",
-    role: "Educator",
-    image: "/Man3.jpg",
+    name: "Natalie Carter",
+    role: "Customer Success Agent",
+    image: "/Man1.jpg",
+  },
+  {
+    name: "Natalie Carter",
+    role: "Customer Success Agent",
+    image: "/Man1.jpg",
+  },
+  {
+    name: "Natalie Carter",
+    role: "Customer Success Agent",
+    image: "/Man1.jpg",
+  },
+  {
+    name: "Natalie Carter",
+    role: "Customer Success Agent",
+    image: "/Man1.jpg",
+  },
+  {
+    name: "Natalie Carter",
+    role: "Customer Success Agent",
+    image: "/Man1.jpg",
   },  {
-    name: "Ethan Alan",
-    role: "Educator",
-    image: "/Man4.jpg",
+    name: "Natalie Carter",
+    role: "Customer Success Agent",
+    image: "/Man1.jpg",
   },  {
-    name: "Lily",
-    role: "Educator",
-    image: "/Girl 5.jpg",
+    name: "Natalie Carter",
+    role: "Customer Success Agent",
+    image: "/Man1.jpg",
+  },  {
+    name: "Natalie Carter",
+    role: "Customer Success Agent",
+    image: "/Man1.jpg",
+  },  {
+    name: "Natalie Carter",
+    role: "Customer Success Agent",
+    image: "/Man1.jpg",
+  },  {
+    name: "Natalie Carter",
+    role: "Customer Success Agent",
+    image: "/Man1.jpg",
+  },  {
+    name: "Natalie Carter",
+    role: "Customer Success Agent",
+    image: "/Man1.jpg",
   },
 ]
 
 
 export default function Home() {
-
+  const plugin = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  )
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-center bg-white dark:bg-gray-900 text-black dark:text-white overflow-hidden">
       <Head>
@@ -222,7 +272,7 @@ export default function Home() {
           <a href="#contact" className="text-primary hover:underline mb-4 inline-block">
             Contact us
           </a>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Our team of educators </h2>
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Our team of educators </h2>
 
           <div className="flex items-center justify-center gap-4">
             <Button variant="secondary" className="gap-2">
@@ -239,35 +289,38 @@ export default function Home() {
           loop: true,
         }}
         className="w-screen"
+        plugins={[plugin.current]}
+
       >
         {/* Margin adjust kiya taake first image aadhi dikhe */}
-<div className="flex justify-center items-center">
-<CarouselContent className="py-6 m grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 items-center justify-center ">
-  {teamMembers.map((member, index) => (
-    <CarouselItem key={index} className="pl-2 md:pl-4">
-      <div className="group cursor-pointer transition-all duration-300 hover:-translate-y-4">
-        <Card className="rounded-2xl transition-all duration-300 hover:shadow-lg bg-transparent border-none">
-          <CardContent className="p-0 relative">
-            <div className="relative">
-              <img
-                src={member.image || "/placeholder.svg"}
-                alt={member.name}
-                className="object-cover rounded-xl w-[204px] h-[250px] grayscale transition-all duration-300 group-hover:grayscale-0"
-              />
-            </div>
-            <div className="absolute bottom-2 left-4 w-[170px] right-4 p-2 backdrop-blur-xl bg-white/60 rounded-lg text-black">
-              <h3 className="font-semibold text-sm">{member.name}</h3>
-              <p className="text-[9px]">{member.role}</p>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-    </CarouselItem>
-  ))}
-</CarouselContent>
-</div>
-
-
+        <CarouselContent className="-ml-[7%] py-6 md:-ml-[12%] md:-mr-[8%]">
+          {teamMembers.map((member, index) => (
+            <CarouselItem
+              key={index}
+              className={`pl-2 md:pl-4 ${
+                index === 0 || index === teamMembers.length - 1 ? "basis-[14.28%]" : "basis-1/7"
+              }`}
+            >
+              <div className="group cursor-pointer transition-all duration-300 hover:-translate-y-4">
+                <Card className="rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg bg-transparent border-none">
+                  <CardContent className="p-0 relative">
+                    <div className="relative overflow-hidden">
+                      <img
+                        src={member.image || "/placeholder.svg"}
+                        alt={member.name}
+                        className="object-cover w-[204px] h-[250px] grayscale transition-all duration-300 group-hover:grayscale-0"
+                      />
+                    </div>
+                    <div className="absolute bottom-2 left-4 right-4 p-2 backdrop-blur-xl bg-white/60 rounded-lg text-black">
+                      <h3 className="font-semibold text-sm">{member.name}</h3>
+                      <p className="text-[9px]">{member.role}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
       </Carousel>
     </div>
 
