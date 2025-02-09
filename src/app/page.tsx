@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button"
 import { PhoneCall } from "lucide-react"
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 import { Card, CardContent } from "@/components/ui/card"
-import { useEffect, useRef } from "react";
 
 
 interface TeamMember {
