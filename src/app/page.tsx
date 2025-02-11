@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Head from "next/head";
-import { ContactForm } from "@/components/Contact/contact-form";
 import { Button } from "@/components/ui/button"
 import { PhoneCall } from 'lucide-react'
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
@@ -60,7 +59,6 @@ export default function Home() {
 
  <FeaturesSection />
 
-{/* Our Trainings Section */}
 <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
   <div className="text-center mb-12">
     <h2 className="text-4xl font-bold text-gray-900 dark:text-white">

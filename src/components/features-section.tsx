@@ -1,8 +1,15 @@
 "use client"
 import { motion } from "framer-motion"
 import { ArrowUpRight, Users, BookOpen, Lightbulb, Heart } from "lucide-react"
-
-const FeatureCard = ({ title, description, icon: Icon, stat, statDescription }:any) => (
+type StatCard = {
+    title: string;
+    description: string;
+    icon: React.ComponentType<{ className?: string }>; 
+    stat: number | string;
+    statDescription: string;
+  };
+  
+const FeatureCard = ({ title, description, icon: Icon, stat, statDescription }:StatCard) => (
   <motion.div
     className="p-6 rounded-xl bg-white dark:bg-[#09090B] shadow-lg transition-all hover:shadow-xl"
     whileHover={{ scale: 1.05 }}
@@ -84,4 +91,3 @@ export default function FeaturesSection() {
     </section>
   )
 }
-

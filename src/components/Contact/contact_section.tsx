@@ -1,8 +1,5 @@
-import { Icon } from "lucide-react"
 import { Card, CardContent, CardHeader } from "../ui/card"
 import { ContactForm } from "./contact-form"
-import { SupportCard } from "./support-card"
-import { Button } from "../ui/button"
 
 export default function ContactPage() {
   return (
