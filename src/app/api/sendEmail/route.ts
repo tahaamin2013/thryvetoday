@@ -3,9 +3,9 @@ import nodemailer from "nodemailer";
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, email, message, phone } = await req.json();
+    const { firstname,lastname, email, message, phone } = await req.json();
 
-    if (!name || !email || !message) {
+    if (!firstname || !lastname || !email || !message) {
       return NextResponse.json(
         { error: "Name, email, and message are required" },
         { status: 400 }
@@ -24,18 +24,18 @@ export async function POST(req: NextRequest) {
     const mailOptions = {
       from: email,
       to: process.env.EMAIL_USER,
-      subject: `New Message From ${name}`,
+      subject: `New Message From ${firstname} ${lastname}`,
       html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
       <header style="background-color: #f5f5f5; padding: 20px; text-align: center;">
       
 <img src='https://raw.githubusercontent.com/tahaamin2013/21/refs/heads/main/Logo.PNG' width="200" heght="200" />
 <h1 style="font-size: 24px; color: #333; margin: 0;">
-  New Message From ${name}
+  New Message From ${firstname} ${lastname}
 </h1>
       </header>
       <div style="padding: 20px;">
-        <p style="font-size: 16px; color: #666;"><strong>Name:</strong> ${name}</p>
+        <p style="font-size: 16px; color: #666;"><strong>Name:</strong> ${firstname} ${lastname}</p>
         <p style="font-size: 16px; color: #666;"><strong>Email:</strong> ${email}</p>
         <p style="font-size: 16px; color: #666;"><strong>Phone:</strong> ${phone}</p>
         <p style="font-size: 16px; color: #666;"><strong>Message:</strong> ${message}</p>

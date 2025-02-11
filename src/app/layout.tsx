@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ThemeContextProvider from "@/context/ThemeContext";
 import Navbar from "@/components/Navbar";
+import Callinfo from "@/components/callinfo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +36,7 @@ export default function RootLayout({
         <Navbar />
           {children}
         </ThemeContextProvider>
+        <Callinfo />
         </body>
     </html>
   );
