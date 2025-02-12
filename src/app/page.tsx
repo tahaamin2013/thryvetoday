@@ -55,7 +55,66 @@ export default function Home() {
       <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-pink-400 opacity-20 rounded-full blur-[120px]"></div>
 
  
- <HeroGeometric />
+      {/* Hero Section */}
+      <main className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
+  <div className="grid md:grid-cols-2 items-center">
+    {/* Left Column - Text Content */}
+    <div>
+      <div className="flex mt-5 tracking-wide text-4xl">
+        Welcome to <span className="font-thryez text-[#2DB188]">Thryve</span>
+      </div>
+      
+      <p className="text-[10px]  tracking-wide italic font-extralight text-gray-600 dark:text-gray-300">
+        Built by nurses, inspired by care, and driven by education.
+      </p>
+
+      <h1 className="text-2xl  tracking-wide mb-4 md:text-2xl mt-6 sm:mt-0 text-gray-900 dark:text-white">
+        Transform Your Life with Quality Medical Training
+      </h1>
+
+      <p className="text-md  tracking-wide text-gray-600 dark:text-gray-300 mb-6">
+        Empower yourself with medical skills guided by experienced educators who care about your growth.
+      </p>
+
+      <p className="text-md  tracking-wide border-t-2 py-2 border-white text-gray-600 dark:text-gray-300 mb-1">
+        Start your journey today to become the best version of yourself.
+      </p>
+
+      <div className="flex   tracking-wide mb-5 space-x-4">
+        <button className="bg-[#2DB188] transition-all duration-500 text-white px-6 py-3 rounded-lg hover:bg-[#258a6a]">
+          Apply Now
+        </button>
+        <button className="border-[#2DB188] transition-all duration-500 text-[#2DB188] border px-6 py-3 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-800">
+          Explore Courses
+        </button>
+      </div>
+    </div>
+
+    {/* Right Column - Images */}
+    <div>
+      <div className="mb-12 flex w-full h-fit sm:h-[450px] md:mb-16 lg:w-2/2 relative">
+        <div className="relative left-12 top-12 z-10 -ml-12 overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800 shadow-lg md:left-16 md:top-16 lg:ml-0">
+          <Image
+            src='/hero2.webp'
+            alt="Great Photo"
+            className="h-full w-full object-cover object-center"
+            width={700}
+            height={500}
+          />
+        </div>
+        <div className="overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800 shadow-lg">
+          <Image
+            src='/hero1.webp'
+            alt="Great Photo"
+            className="h-full w-full object-cover object-center"
+            width={700}
+            height={500}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</main> 
 
  <FeaturesSection />
 
