@@ -10,11 +10,15 @@ export default {
   ],
   theme: {
   	extend: {
+		
 		fontFamily: {
 			thryez: ['"brunella"', 'sans-serif'], // Replace with your font's name
 			GothamNarrow: ['"gothamNarrow"', 'sans-serif'], // Replace with your font's name
 		  },
   		colors: {
+			'blue': {
+          800: '#1e40af',
+        },
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

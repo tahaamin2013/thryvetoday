@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Head from "next/head";
 import { Button } from "@/components/ui/button"
-import { PhoneCall } from 'lucide-react'
+import { Badge } from "@/components/ui/badge"
+import { Clock, DollarSign, PhoneCall, Users, Badge as BadgeIcon } from 'lucide-react'
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 import { Card, CardContent } from "@/components/ui/card"
 import ContactPage from "@/components/Contact/contact_section";
 import FeaturesSection from "@/components/features-section";
+import Courses from "@/components/Courses";
 
 
 interface TeamMember {
@@ -41,7 +43,48 @@ const teamMembers: TeamMember[] = [
 
 
 export default function Home() {
-
+  const courses = [
+    {
+      title: "Nurse Aide Training",
+      price: 2500,
+      duration: "3.5 weeks",
+      totalHours: 138,
+      icon: "👩‍⚕️",
+      color: "bg-blue-100 text-blue-800",
+    },
+    {
+      title: "Phlebotomy Class",
+      price: 1300,
+      duration: "3.5 weeks",
+      totalHours: 110,
+      icon: "💉",
+      color: "bg-green-100 text-green-800",
+    },
+    {
+      title: "ACLS",
+      price: 150,
+      duration: "4 hours",
+      totalHours: 4,
+      icon: "🫀",
+      color: "bg-red-100 text-red-800",
+    },
+    {
+      title: "Basic Life Support",
+      price: 65,
+      duration: "4 hours",
+      totalHours: 4,
+      icon: "🩺",
+      color: "bg-yellow-100 text-yellow-800",
+    },
+    {
+      title: "PALS",
+      price: 165,
+      duration: "4 hours",
+      totalHours: 4,
+      icon: "👶",
+      color: "bg-purple-100 text-purple-800",
+    },
+  ]
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-center bg-white dark:bg-black text-black dark:text-white overflow-hidden">
       <Head>
@@ -117,69 +160,9 @@ export default function Home() {
 
  <FeaturesSection />
 
-<section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
-  <div className="text-center mb-12">
-    <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
-      Our <span className="font-thryez text-[#2DB188]">Trainings</span>
-    </h2>
-    <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-      We offer a variety of medical training programs to suit your needs:
-    </p>
-  </div>
-
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-    <div className="p-6 rounded-lg bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all">
-      <h3 className="text-xl font-semibold mb-3 text-[#2DB188]">
-        Advanced Life Support (ALS)
-      </h3>
-      <div className="w-16 h-1 bg-[#2DB188] mb-4"></div>
-    </div>
-
-    <div className="p-6 rounded-lg bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all">
-      <h3 className="text-xl font-semibold mb-3 text-[#2DB188]">
-        Basic Life Support (BLS)
-      </h3>
-      <div className="w-16 h-1 bg-[#2DB188] mb-4"></div>
-    </div>
-
-    <div className="p-6 rounded-lg bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all">
-      <h3 className="text-xl font-semibold mb-3 text-[#2DB188]">
-        Pediatric Life Support (PALS)
-      </h3>
-      <div className="w-16 h-1 bg-[#2DB188] mb-4"></div>
-    </div>
-
-    <div className="p-6 rounded-lg bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all">
-      <h3 className="text-xl font-semibold mb-3 text-[#2DB188]">
-        Nurse-Aid Training Program
-      </h3>
-      <div className="w-16 h-1 bg-[#2DB188] mb-4"></div>
-    </div>
-
-    <div className="p-6 rounded-lg bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all">
-      <h3 className="text-xl font-semibold mb-3 text-[#2DB188]">
-        Phlebotomy Training
-      </h3>
-      <div className="w-16 h-1 bg-[#2DB188] mb-4"></div>
-    </div>
-
-    <div className="p-6 rounded-lg bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all">
-      <h3 className="text-xl font-semibold mb-3 text-gray-500 dark:text-gray-400 italic">
-        ... and more to come!
-      </h3>
-      <div className="w-16 h-1 bg-gray-300 mb-4"></div>
-    </div>
-  </div>
-
-  <div className="text-center">
-    <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-      Join us to gain essential skills that make a difference.
-    </p>
-    <button className="bg-[#2DB188] transition-all duration-500 text-white px-8 py-3 rounded-lg hover:bg-[#258a6a] font-semibold">
-      View All Courses
-    </button>
-  </div>
-</section>
+<div>
+<Courses />
+</div>
 
 {/* Meet Our Educators Section */}
 <section className="py-16 ">
